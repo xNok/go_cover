@@ -9,44 +9,20 @@ This project has two packages, one is pkg1 and the other is pkg2. The pkg1 has e
 # Outputs
 
 ```shell
-yudai@yudai01% ./without_coverpkg.sh
-?       github.com/yudai/go_cover       [no test files]
-=== RUN   TestPkg1
---- PASS: TestPkg1 (0.00s)
-PASS
-coverage: 100.0% of statements
-ok      github.com/yudai/go_cover/pkg1  1.014s
-?       github.com/yudai/go_cover/pkg2  [no test files]
-github.com/yudai/go_cover/pkg1/pkg1.go:7:       DoSomething     100.0%
-github.com/yudai/go_cover/pkg1/pkg1.go:15:      DoSomethingElse 100.0%
-github.com/yudai/go_cover/pkg1/pkg1.go:23:      CallPkg2        100.0%
-total:                                          (statements)    100.0%
+/workspace/go_cover (master) $ ./without_coverpkg.sh 
+?       github.com/xNok/go_cover        [no test files]
+ok      github.com/xNok/go_cover/pkg1   0.001s  coverage: 100.0% of statements
+?       github.com/xNok/go_cover/pkg2   [no test files]
 ```
 
 We don't have any tests for `pkg2`, but the shown coverage is 100%.
 
 
 ```shell
-yudai@yudai01% ./with_coverpkg.sh
-warning: no packages being tested depend on github.com/yudai/go_cover/pkg1
-warning: no packages being tested depend on github.com/yudai/go_cover/pkg2
-?       github.com/yudai/go_cover       [no test files]
-warning: no packages being tested depend on github.com/yudai/go_cover
-=== RUN   TestPkg1
---- PASS: TestPkg1 (0.00s)
-PASS
-coverage: 51.9% of statements in github.com/yudai/go_cover, github.com/yudai/go_cover/pkg1, github.com/yudai/go_cover/pkg2
-ok      github.com/yudai/go_cover/pkg1  1.019s
-warning: no packages being tested depend on github.com/yudai/go_cover
-warning: no packages being tested depend on github.com/yudai/go_cover/pkg1
-?       github.com/yudai/go_cover/pkg2  [no test files]
-github.com/yudai/go_cover/main.go:3:            main            0.0%
-github.com/yudai/go_cover/pkg1/pkg1.go:7:       DoSomething     100.0%
-github.com/yudai/go_cover/pkg1/pkg1.go:15:      DoSomethingElse 100.0%
-github.com/yudai/go_cover/pkg1/pkg1.go:23:      CallPkg2        100.0%
-github.com/yudai/go_cover/pkg2/pkg2.go:3:       DoSomething     30.0%
-github.com/yudai/go_cover/pkg2/pkg2.go:18:      DoSomethingElse 0.0%
-total:                                          (statements)    51.9%
+/workspace/go_cover (master) $ ./with_coverpkg.sh 
+?       github.com/xNok/go_cover        [no test files]
+ok      github.com/xNok/go_cover/pkg1   0.001s  coverage: 40.7% of statements in ./...
+?       github.com/xNok/go_cover/pkg2   [no test files]
 ```
 
 Now you see the real total coverage.

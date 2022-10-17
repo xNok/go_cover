@@ -1,0 +1,4 @@
+mode: atomic
+github.com/xNok/go_cover/pkg1/pkg1.go:7.20,13.2 5 1
+github.com/xNok/go_cover/pkg1/pkg1.go:15.24,21.2 5 1
+github.com/xNok/go_cover/pkg1/pkg1.go:23.17,25.2 1 1
